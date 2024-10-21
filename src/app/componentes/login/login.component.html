@@ -1,0 +1,25 @@
+<div class="fullscreen">
+    <main class="form-signin w-100 m-auto">
+        <div>
+            <img class="mb-4" src="https://previews.123rf.com/images/aquir/aquir2307/aquir230701235/208531522-helado-helado-ilustraci%C3%B3n-c%C3%B3mica-dibujada-a-mano-ilustraci%C3%B3n-de-dibujos-animados-de-estilo-de.jpg" alt="helado-de-vainilla" width="m-auto" height="150">
+            <h1 class="h3 mb-3 fw-normal">Heladería Pirulo</h1>
+        
+            <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" value={{correo}}>
+                <label for="floatingInput">Correo</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" value={{contrasena}}>
+                <label for="floatingPassword">Contraseña</label>
+            </div>
+            <div class="submit-button">
+                <button class="btn btn-primary" id="submit-button" type="submit" (click)="IniciarSesion()">Iniciar Sesion</button>
+            </div>
+            <div class="autolog">
+                <button class="btn btn-secondary" (click)="logEmpleado()">Empleado</button>
+                <button class="btn btn-secondary" (click)="logAdmin()">Admin</button>
+            </div>
+            <p>{{prompt}}</p>
+        </div>
+    </main>
+</div>

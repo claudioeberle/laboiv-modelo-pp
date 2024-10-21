@@ -1,0 +1,25 @@
+<table class="table table-striped" *ngIf="repartidores$ | async as repartidores">
+    <thead>
+    <tr>
+      <th>Dni</th>
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th>Capacidad</th>
+      <th>Pais</th>
+      <th>Unidad Propia</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let rep of repartidores">
+      <td>{{ rep.dni }}</td>
+      <td>{{ rep.nombre }}</td>
+      <td>{{ rep.edad }}</td>
+      <td>{{ rep.capacidad }}</td>
+      <td>{{ rep.pais }}</td>
+      <td>{{ rep.unidad }}</td>
+      <td>
+        <button type="button" class="btn btn-primary" (click)="seleccionarRepartidor(rep)">Seleccionar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>

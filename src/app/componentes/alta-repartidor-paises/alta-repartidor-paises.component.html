@@ -1,0 +1,9 @@
+<div class="componente-b">
+  <h3>País de Origen</h3>
+  <div class="pais-container">
+    <div *ngFor="let pais of data" class="pais-item">
+      <img [src]="pais?.flags?.png" [alt]="pais?.flags?.alt || 'Sin bandera disponible'" class="bandera">
+      <button (click)="SeleccionPais(pais.translations.spa.common)" class="boton-nombre">{{pais.translations.spa.common}}</button>
+    </div>
+  </div>
+</div>

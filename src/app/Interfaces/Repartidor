@@ -1,0 +1,8 @@
+export interface Repartidor{
+    dni:number,
+    nombre:string,
+    edad:number,
+    capacidad:number,
+    pais:string,
+    unidad:number
+}

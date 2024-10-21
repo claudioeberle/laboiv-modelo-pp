@@ -1,0 +1,17 @@
+  #messenger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .invalid-feedback {
+    color:white;
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .form-label{
+    width: 35%;
+  }

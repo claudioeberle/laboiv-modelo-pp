@@ -1,0 +1,68 @@
+<div class="container">
+    <main>
+        <div class="row g-5">
+            <div class="col-md-12">
+                <form [formGroup]="altaForm" (ngSubmit)="onSubmit()">
+                    <div class="row g-3">
+
+                        <div class="col-sm-12">
+                            <label class="form-label">DNI</label>
+                            <input type="text" formControlName="dni">
+                            <div *ngIf="altaForm.get('dni')?.invalid && altaForm.get('dni')?.touched">
+                                Proporcione un DNI válido.
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" formControlName="nombre">
+                            <div *ngIf="altaForm.get('nombre')?.invalid && altaForm.get('nombre')?.touched">
+                                Proporcione un Nombre válido.
+                            </div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <label for="edad" class="form-label">Edad</label>
+                            <input type="number" formControlName="edad">
+                            <div *ngIf="altaForm.get('edad')?.invalid && altaForm.get('edad')?.touched">
+                                Proporcione una edad válida. Entre 18 y 65 años.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="capacidad" class="form-label">Capacidad</label>
+                            <input type="number" formControlName="capacidad">
+                            <div *ngIf="altaForm.get('capacidad')?.invalid && altaForm.get('capacidad')?.touched">
+                                Proporcione un capacidad válida. Entre 1 y 5 unidades.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="pais" class="form-label">País de Origen</label>
+                            <input type="text" formControlName="pais">
+                            <div *ngIf="altaForm.get('pais')?.invalid">
+                                Seleccione un País de la lista.
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <label for="unidad" class="form-label">Unidad Propia</label>
+                            <select formControlName="unidad">
+                                <option value="">Elija...</option>
+                                <option>Sí</option>
+                                <option>No</option>
+                            </select>
+                            <div *ngIf="altaForm.get('unidad')?.invalid && altaForm.get('unidad')?.touched">
+                                Seleccione una opción.
+                            </div>
+                        </div>
+                    </div>
+                    <div id="messenger"><h2>{{prompt}}</h2></div>
+                    <hr class="my-4">
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+

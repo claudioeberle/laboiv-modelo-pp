@@ -1,0 +1,31 @@
+<div *ngIf="repartidorSeleccionado">
+    <table class="table table-striped">
+      <tr>
+        <td><strong>Dni:</strong></td>
+        <td>{{ repartidorSeleccionado.dni }}</td>
+      </tr>
+      <tr>
+        <td><strong>Nombre:</strong></td>
+        <td>{{ repartidorSeleccionado.nombre }}</td>
+      </tr>
+      <tr>
+        <td><strong>Edad:</strong></td>
+        <td>{{ repartidorSeleccionado.edad }}</td>
+      </tr>
+      <tr>
+        <td><strong>Capacidad:</strong></td>
+        <td>{{ repartidorSeleccionado.capacidad }}</td>
+      </tr>
+      <tr>
+        <td><strong>Pais:</strong></td>
+        <td>{{ repartidorSeleccionado.pais }}</td>
+      </tr>
+      <tr>
+        <td><strong>Unidad Propia:</strong></td>
+        <td>{{ repartidorSeleccionado.unidad }}</td>
+      </tr>
+    </table>
+  </div>
+  <div *ngIf="!repartidorSeleccionado">
+    <p>No repartidor seleccionado.</p>
+  </div>

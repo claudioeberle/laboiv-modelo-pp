@@ -1,0 +1,7 @@
+export interface Pais{
+    nombre:string,
+    bandera:string,
+    capital:string,
+    continente:string,
+    habitantes:string
+}
