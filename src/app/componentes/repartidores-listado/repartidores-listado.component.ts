@@ -2,8 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RepartidoresService } from '../../services/repartidores.service';
-import { RepartidorDetalleComponent } from '../repartidor-detalle/repartidor-detalle.component';
-import { PaisDetalleComponent } from '../pais-detalle/pais-detalle.component';
 
 @Component({
   selector: 'app-repartidores-listado',

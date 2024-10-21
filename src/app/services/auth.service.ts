@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
+import { Auth, authState, signInWithEmailAndPassword } from '@angular/fire/auth';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,10 @@ export class AuthService {
     .catch((e: { code: string; })=>{
       console.log(e);
     })
+  }
+
+  getUser(){
+    return this.auth.currentUser;
   }
   
 }

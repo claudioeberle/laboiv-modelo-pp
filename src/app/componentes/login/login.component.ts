@@ -33,6 +33,7 @@ export class LoginComponent {
       console.log(res);
       console.log('SESION INICIADA: ' + this.correo);
       this.sesionService.setSessionState(true);
+      this.sesionService.user = this.auth.currentUser;
       this.router.navigate(['/home'])
     })
     .catch((e: { code: string; })=>{

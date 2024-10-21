@@ -1,17 +1,19 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './componentes/home/home.component';
 import { LoginComponent } from './componentes/login/login.component';
-import { LogoutComponent } from './componentes/logout/logout.component';
 import { AltaRepartidorComponent } from './componentes/alta-repartidor/alta-repartidor.component';
-import { HeladosComponent } from './componentes/helados/helados.component';
 import { RepartidoresComponent } from './repartidores/repartidores.component';
+import { sesionGuard } from './guards/sesion.guard';
+import { adminGuard } from './guards/admin.guard';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: "full" },
+    { path: 'logout', redirectTo: '/home' },
     { path: 'login',component: LoginComponent },
     { path: 'home', component: HomeComponent},
-    { path: 'logout', component: LogoutComponent },
-    { path: 'repartidorAlta', component: AltaRepartidorComponent},
-    { path: 'helados', component: HeladosComponent },
-    { path: 'repartidores', component: RepartidoresComponent}
+    { path: 'repartidorAlta', component: AltaRepartidorComponent, canActivate: [sesionGuard]},
+    {   path: 'helados',
+        loadChildren: () => import('./helados/helados.module').then(m => m.HeladosModule), 
+        canActivate: [adminGuard]},
+    { path: 'repartidores', component: RepartidoresComponent, canActivate: [sesionGuard]}
 ];

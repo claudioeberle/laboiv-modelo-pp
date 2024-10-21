@@ -17,7 +17,7 @@ export class AltaRepartidorPaisesComponent implements OnInit{
   constructor(private paisesService:PaisesService, private paisElegidoService:PaisElegidoService) {}   
   
   ngOnInit(){
-    this.paisesService.getByRegion('Europe').subscribe(data => {
+    this.paisesService.getByRegion('Americas').subscribe(data => {
       this.data = Array.isArray(data) ? data : Object.values(data);
       console.log(this.data);
    

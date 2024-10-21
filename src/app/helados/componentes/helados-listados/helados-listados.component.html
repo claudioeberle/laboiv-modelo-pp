@@ -1,0 +1,26 @@
+<table class="table table-striped" *ngIf="helados$ | async as helados">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Peso</th>
+      <th>Precio</th>
+      <th>Modificar</th>
+      <th>Eliminar</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let helado of helados">
+      <td>{{ helado.nombre }}</td>
+      <td>{{ helado.tipo }}</td>
+      <td>{{ helado.precio }}</td>
+      <td>{{ helado.peso }}</td>
+      <td>
+        <button type="button" class="btn btn-primary" (click)="modificarHelado(helado)">Modificar</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-primary" (click)="eliminarHelado(helado)">Eliminar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>

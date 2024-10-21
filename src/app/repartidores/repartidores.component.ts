@@ -3,6 +3,7 @@ import { RepartidoresListadoComponent } from '../componentes/repartidores-listad
 import { CommonModule } from '@angular/common';
 import { RepartidorDetalleComponent } from '../componentes/repartidor-detalle/repartidor-detalle.component';
 import { PaisDetalleComponent } from '../componentes/pais-detalle/pais-detalle.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-repartidores',
@@ -19,6 +20,9 @@ import { PaisDetalleComponent } from '../componentes/pais-detalle/pais-detalle.c
 export class RepartidoresComponent {
   repartidorSeleccionado!: any;
 
+  constructor(private router:Router) {}
+
+
   @Output() repartidorSeleccionadoParaDetalle: EventEmitter<any> = new EventEmitter<any>();
 
   alSeleccionarUnRepartidor(repartidor: any): void {
@@ -26,5 +30,9 @@ export class RepartidoresComponent {
 
     this.repartidorSeleccionado = repartidor;
     this.repartidorSeleccionadoParaDetalle.emit(repartidor);
+  }
+
+  goHome(){
+    this.router.navigateByUrl('home');
   }
 }

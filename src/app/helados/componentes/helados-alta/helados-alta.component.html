@@ -1,0 +1,53 @@
+<div class="container">
+    <main>
+        <div class="row g-5">
+            <div class="col-md-12">
+                <form [formGroup]="altaForm" (ngSubmit)="onSubmit()">
+                    <div class="row g-3">
+
+                        <div class="col-sm-12">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" formControlName="nombre">
+                            <div *ngIf="altaForm.get('nombre')?.invalid && altaForm.get('nombre')?.touched">
+                                Proporcione un Nombre válido.
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <label for="tipo" class="form-label">Tipo</label>
+                            <select formControlName="tipo">
+                                <option value="">Elija...</option>
+                                <option>Agua</option>
+                                <option>Crema</option>
+                            </select>
+                            <div *ngIf="altaForm.get('tipo')?.invalid && altaForm.get('tipo')?.touched">
+                                Seleccione un tipo.
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <label for="precio" class="form-label">Precio</label>
+                            <input type="number" formControlName="precio">
+                            <div *ngIf="altaForm.get('precio')?.invalid && altaForm.get('precio')?.touched">
+                                Proporcione un Precio válido. Mayor a cero.
+                            </div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <label for="peso" class="form-label">Peso</label>
+                            <input type="number" formControlName="peso">
+                            <div *ngIf="altaForm.get('peso')?.invalid && altaForm.get('peso')?.touched">
+                                Proporcione un peso válido. Entre 250 y 1000 grs.
+                            </div>
+                        </div>
+                    </div>
+                    <div id="messenger"><h2>{{prompt}}</h2></div>
+                    <hr class="my-4">
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+

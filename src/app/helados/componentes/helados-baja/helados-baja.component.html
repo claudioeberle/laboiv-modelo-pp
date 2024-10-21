@@ -1,0 +1,5 @@
+<div *ngIf="heladoSeleccionado">
+    <h3>¿Estás seguro que deseas eliminar el helado "{{ heladoSeleccionado.nombre }}"?</h3>
+    <button (click)="eliminarHelado()">Eliminar</button>
+    <p *ngIf="prompt">{{ prompt }}</p>
+  </div>
